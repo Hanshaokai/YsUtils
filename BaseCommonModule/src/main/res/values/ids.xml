@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="statusbarutil_fake_status_bar_view" />
+    <item type="id" name="statusbarutil_translucent_view" />
+    <item type="id" name="base_target_view" />
+    <item type="id" name="base_empty_view" />
+    <item type="id" name="base_loading_view" />
+</resources>

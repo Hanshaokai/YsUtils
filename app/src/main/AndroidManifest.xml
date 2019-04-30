@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="zity.net.ysutils"
+    android:sharedUserId="com.alive.app">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 必需的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--开机广播权限-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED " />
+    <dist:module dist:instant="true" />
+
+    <application
+        android:name=".base.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+
+        <!--排除在RecentTask中显示
+         不能使用android:process=":live"
+                android:enable="false"属性
+         -->
+        <activity
+            android:name=".SinglePixelActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/SingleActivityStyle" />
+
+        <activity
+            android:name=".SportsActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".MainActivity" />
+        <!--注册开机关机广播监听-->
+        <receiver android:name=".receiver.BootCompletedReceiver">
+            <intent-filter>
+                <!--开机广播-->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!--关机广播-->
+                <action android:name="android.intent.action.ACTION_SHUTDOWN " />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".service.RegisterService" />
+        <service
+            android:name=".keepalive.LcbAliveService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+        <!--注册Service-->
+        <service
+            android:name=".service.DaemonService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":daemon_service" />
+
+        <service
+            android:name=".service.CancelNoticeService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":service" />
+        <service
+            android:name=".service.PlayerMusicService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":music_service" />
+        <service
+            android:name=".service.AliveJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!--接收系统广播接收器-->
+        <receiver android:name=".receiver.KeepAliveReceiver">
+            <!--设备重启广播-->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--安装或卸载广播-->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!--解锁广播-->
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_USER_PRESENT" />
+            </intent-filter>
+            <!--存储卡挂载广播-->
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+
+                <data android:scheme="file"></data>
+            </intent-filter>
+            <!--网络状态广播-->
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

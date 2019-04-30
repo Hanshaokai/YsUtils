@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="whiteUrl">
+        <!--第三方表格js-->
+        <item>https://img.hcharts.cn/highcharts</item>
+        <!--DSbridge引入-->
+        <item>https://cdn.jsdelivr.net</item>
+    </string-array>
+</resources>

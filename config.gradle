@@ -1,0 +1,35 @@
+ext {
+    android = [
+            compileSdkVersion : 28,
+            buildToolsVersion : '28.0.3',
+            minSdkVersion     : 19,
+            targetSdkVersion  : 28,
+
+            versionCode       : 12,
+            versionName       : "1.0.11",
+            baseUrl           : "http://39.105.18.201:8000",
+            applicationId     : 'zity.net.ysutils',
+
+            appName           : "费县专职代办",
+            appNameDebug      : "费县专职代办测试",
+
+            versionCodeDebug  : 17,
+            versionNameDebug  : "1.0.16",
+            applicationIdDebug: 'zity.net.ysutils_debug',
+            baseUrlDebug      : "http://221.195.78.13:6180",
+//            baseUrlDebug      : "http://221.195.78.13:6030",
+            // true 为测试环境下的配置
+            // false 为生产环境下的配置
+            // 默认是测试 在app 中多渠道闭包中赋值
+            isDebugEnvironment: false
+    ]
+
+    dependencies = [
+            supportv7: 'com.android.support:appcompat-v7:28.0',
+            multidex : '',
+            glide    : 'com.github.bumptech.glide:glide:4.8.0',
+            gson     : 'com.google.code.gson:gson:2.8.2',
+            design   : 'com.android.support:design:28.0.0'
+    ]
+
+}

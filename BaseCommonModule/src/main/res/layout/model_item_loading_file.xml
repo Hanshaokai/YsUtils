@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <net.zity.riqingrijie.widget.CustomProgressBar
+        android:id="@+id/pb_file_load"
+        android:layout_width="600dp"
+        android:layout_height="20dp"
+        app:pbBgColor="@color/pb_grey"
+        app:pbHeight="6dp"
+        app:pbShadeColor="@color/bg_green"
+        app:pbWidth="590dp" />
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bar_red">#E60B00</color>
+    <color name="status_bar_red">#E60B00</color>
+    <color name="app_bar_blue">#0066D5</color>
+    <color name="bg_blue">#0066D5</color>
+    <color name="status_bar_blue">#0066D5</color>
+    <color name="widget_select_red">#FF4081</color>
+    <color name="widget_pre_whipb_greyte">#ffffff</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="tb_text_grey">#777777</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="line_grey">#EEEEEE</color>
+    <color name="text_grey_small">#999999</color>
+    <color name="text_grey_more">#666666</color>
+    <color name="text_grey_great">#333333</color>
+    <color name="transparent_grey_small">#55999999</color>
+    <color name="bg_divider_grey">#E5E5E5</color>
+    <color name="pb_grey">#E5E5E5</color>
+    <color name="bg_green">#AED581</color>
+    <color name="lfile_lightgray">#dddddd</color>
+    <color name="white">#ffffff</color>
+    <color name="text_black">#444552</color>
+    <color name="press_grey">#EDEDED</color>
+    <color name="black">#000000</color>
+</resources>
